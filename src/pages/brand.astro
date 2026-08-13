@@ -1,0 +1,767 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Nav from "@/sections/Nav.astro"
+import Footer from "@/sections/Footer.astro"
+
+const colors = [
+	{ name: "Ink", hex: "#282A3E", role: "Dominant", className: "brand-swatch-ink" },
+	{ name: "Teal", hex: "#20A39E", role: "Signal", className: "brand-swatch-teal" },
+	{ name: "Citrus", hex: "#E2EB98", role: "Accent", className: "brand-swatch-citrus" },
+	{ name: "Mist", hex: "#F0F0F8", role: "Canvas", className: "brand-swatch-mist" },
+] as const
+---
+
+<Layout
+	title="NFTLox brand system — Visual identity"
+	description="The NFTLox visual identity system: logo, mark, color palette, and typography."
+	canonical="https://nftlox.com/brand"
+>
+	<Nav />
+
+	<div class="brand-page">
+		<header class="brand-shell brand-header">
+			<div class="brand-meta">
+				<strong>NFT LOX</strong> / VISUAL IDENTITY SYSTEM<br />
+				<span>Spec v1.0 · 2026</span>
+			</div>
+			<div class="brand-meta brand-meta-right">
+				<span class="brand-status-dot"></span> Built on Hive<br />
+				<span>NFT protocol</span>
+			</div>
+		</header>
+
+		<div class="brand-shell brand-main">
+			<section class="brand-intro" aria-labelledby="brand-title">
+				<div>
+					<p class="brand-kicker">Identity · One page reference</p>
+					<h1 id="brand-title">Lock it.<br />Own it. <em>Prove it.</em></h1>
+				</div>
+				<p class="brand-lead">
+					NFT <span>LOX</span> is a protocol on Hive for issuing, custodying, and verifying non-fungible
+					assets — engineered for creators who treat ownership as infrastructure, not speculation.
+				</p>
+			</section>
+
+			<section class="brand-grid" aria-label="NFTLox identity assets">
+				<article class="brand-card brand-card-logo">
+					<div class="brand-card-label"><span>01 · Primary wordmark</span><span>A</span></div>
+					<div class="brand-logo-stage">
+						<img src="/brand/wordmark.svg" alt="NFTLox wordmark" width="1174" height="321" />
+					</div>
+					<p class="brand-lockup">LOX <span>✦</span> NFT PROTOCOL <span>✦</span> HIVE</p>
+					<a class="brand-download" href="/brand/wordmark.svg" download>Download SVG ↗</a>
+				</article>
+
+				<article class="brand-card brand-card-mark">
+					<div class="brand-card-label"><span>02 · The mark</span><span>full bleed</span></div>
+					<div class="brand-mark-stage">
+						<img src="/brand/mark.svg" alt="NFTLox X mark" width="240" height="240" />
+					</div>
+					<div class="brand-size-strip" aria-label="Mark sizes">
+						{
+							[16, 32, 64, 128].map((size) => (
+								<span>
+									<img src="/brand/mark.svg" alt="" width={size} height={size} aria-hidden="true" />
+									<small>{size}px</small>
+								</span>
+							))
+						}
+					</div>
+				</article>
+
+				<article class="brand-card brand-card-palette">
+					<div class="brand-card-label">
+						<span>03 · Color system</span><span>60 / 25 / 15</span>
+					</div>
+					<div class="brand-swatches">
+						{
+							colors.map((color, index) => (
+								<div
+									class:list={[
+										"brand-swatch",
+										color.className,
+										index % 2 === 0 && "brand-swatch-mobile-right",
+										index < 2 && "brand-swatch-mobile-bottom",
+									]}
+								>
+									<div>
+										<>
+											<strong>{color.name}</strong>
+											<small>{color.hex}</small>
+										</>
+									</div>
+									<span>{color.role}</span>
+								</div>
+							))
+						}
+					</div>
+					<div class="brand-palette-rule">
+						<span>Ink 60</span>
+						<i>
+							<b class="brand-palette-ink"></b><b class="brand-palette-teal"></b><b
+								class="brand-palette-citrus"></b>
+						</i>
+						<span>Teal 25 / Citrus 15</span>
+					</div>
+				</article>
+
+				<article class="brand-card brand-card-type">
+					<div class="brand-card-label"><span>04 · Typography</span><span>2 voices</span></div>
+					<div class="brand-type-block">
+						<small>Display · Space Grotesk Semibold</small>
+						<strong class="brand-type-display">Own it.</strong>
+					</div>
+					<div class="brand-type-block">
+						<small>Code · JetBrains Mono Medium</small>
+						<strong class="brand-type-mono">PROTOCOL_001</strong>
+					</div>
+					<div class="brand-type-block">
+						<small>Body · Space Grotesk Regular</small>
+						<p>Lock, list, and verify ownership on Hive.</p>
+					</div>
+				</article>
+
+				<article class="brand-card brand-card-apps">
+					<div class="brand-card-label">
+						<span>05 · Applications</span><span>Built to travel</span>
+					</div>
+					<div class="brand-app-grid">
+						<div class="brand-app brand-app-profile">
+							<small>Avatar / PNG</small>
+							<div class="brand-profile-preview">
+								<img
+									src="/brand/avatar-400.png"
+									alt="NFTLox avatar mark"
+									width="400"
+									height="400"
+								/>
+								<div>
+									<strong>NFT LOX</strong><span>@nftloxbuild</span><p>
+										Building the NFT protocol on Hive.
+									</p>
+								</div>
+							</div>
+							<a class="brand-download" href="/brand/avatar-400.png" download>Download PNG ↗</a>
+						</div>
+						<div class="brand-app brand-app-stamp">
+							<small>Stamp mark</small>
+							<div class="brand-stamp-word">Lox<span>.</span></div>
+							<div class="brand-stamp-meta"><span>NFT · HIVE</span><span>v1.0</span></div>
+						</div>
+						<div class="brand-app brand-app-terminal">
+							<small>Voice in product</small>
+							<div class="brand-terminal" aria-label="Example protocol command">
+								<div><b>$</b> lox mint --asset drop.001</div>
+								<div class="brand-terminal-output"><b>›</b> asset locked on hive</div>
+								<div class="brand-terminal-output">
+									<b>›</b> proof issued<span class="brand-cursor"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+		</div>
+
+		<footer class="brand-shell brand-page-footer">
+			<span>@nftloxbuild · nftlox.com</span>
+			<strong>— designed to last.</strong>
+			<span>01 / 01</span>
+		</footer>
+	</div>
+
+	<Footer />
+</Layout>
+
+<style>
+	.brand-page {
+		--brand-ink: #282a3e;
+		--brand-citrus: #e2eb98;
+		--brand-teal: #20a39e;
+		--brand-mist: #f0f0f8;
+		background:
+			radial-gradient(circle at 12% 8%, rgba(32, 163, 158, 0.06), transparent 40%),
+			radial-gradient(circle at 92% 96%, rgba(226, 235, 152, 0.18), transparent 45%),
+			var(--brand-mist);
+		color: var(--brand-ink);
+		font-family: var(--font-sans);
+	}
+
+	.brand-shell {
+		width: min(100% - 3rem, 80rem);
+		margin-inline: auto;
+	}
+
+	.brand-header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding-block: 2rem 1.25rem;
+		border-bottom: 1px solid var(--brand-ink);
+	}
+
+	.brand-meta,
+	.brand-card-label,
+	.brand-kicker,
+	.brand-download,
+	.brand-lockup,
+	.brand-size-strip,
+	.brand-palette-rule,
+	.brand-type-block small,
+	.brand-app small,
+	.brand-page-footer {
+		font-family: var(--font-display);
+		font-size: 0.625rem;
+		font-weight: 500;
+		letter-spacing: 0.14em;
+		line-height: 1.6;
+		text-transform: uppercase;
+	}
+
+	.brand-meta span,
+	.brand-meta-right span:last-child {
+		opacity: 0.56;
+	}
+
+	.brand-meta-right {
+		text-align: right;
+	}
+
+	.brand-status-dot {
+		display: inline-block;
+		width: 0.4rem;
+		height: 0.4rem;
+		margin-right: 0.25rem;
+		border-radius: 999px;
+		background: var(--brand-teal);
+		vertical-align: 0.05em;
+	}
+
+	.brand-main {
+		padding-block: clamp(4rem, 9vw, 7rem) 5rem;
+	}
+
+	.brand-intro {
+		display: grid;
+		grid-template-columns: 1.1fr 1fr;
+		align-items: end;
+		gap: clamp(2rem, 6vw, 6rem);
+		margin-bottom: clamp(3.5rem, 7vw, 5.5rem);
+	}
+
+	.brand-kicker {
+		margin-bottom: 1.25rem;
+		border-left: 2px solid var(--brand-ink);
+		padding-left: 0.875rem;
+	}
+
+	.brand-intro h1 {
+		margin: 0;
+		font-size: clamp(4rem, 9vw, 7.5rem);
+		font-weight: 500;
+		letter-spacing: -0.065em;
+		line-height: 0.92;
+	}
+
+	.brand-intro h1 em,
+	.brand-lead span,
+	.brand-lockup span,
+	.brand-stamp-meta span:last-child {
+		color: var(--brand-teal);
+		font-style: normal;
+		font-weight: 600;
+	}
+
+	.brand-lead {
+		max-width: 34rem;
+		margin: 0 0 0.25rem;
+		border-left: 1px solid rgba(40, 42, 62, 0.22);
+		padding-left: 1.5rem;
+		font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+		letter-spacing: -0.015em;
+		line-height: 1.5;
+	}
+
+	.brand-grid {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+
+	.brand-card {
+		position: relative;
+		display: flex;
+		min-height: 21rem;
+		flex-direction: column;
+		overflow: hidden;
+		border: 1px solid var(--brand-ink);
+		background: rgba(255, 255, 255, 0.82);
+		padding: 1.75rem;
+	}
+
+	.brand-card-logo,
+	.brand-card-palette {
+		grid-column: span 7;
+	}
+
+	.brand-card-mark,
+	.brand-card-type {
+		grid-column: span 5;
+	}
+
+	.brand-card-apps {
+		grid-column: span 12;
+		min-height: auto;
+		padding-bottom: 0;
+	}
+
+	.brand-card-label {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px dashed rgba(40, 42, 62, 0.3);
+		padding-bottom: 1rem;
+		color: var(--brand-ink);
+	}
+
+	.brand-card-label span:last-child {
+		opacity: 0.52;
+	}
+
+	.brand-logo-stage,
+	.brand-mark-stage {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem 0 1rem;
+	}
+
+	.brand-logo-stage img {
+		width: min(90%, 29rem);
+		height: auto;
+	}
+
+	.brand-lockup {
+		margin: 0;
+		text-align: center;
+	}
+
+	.brand-download {
+		align-self: flex-start;
+		margin-top: 1rem;
+		border-bottom: 1px solid currentColor;
+		color: var(--brand-ink);
+		text-decoration: none;
+	}
+
+	.brand-card-mark {
+		background: var(--brand-ink);
+		color: var(--brand-mist);
+	}
+
+	.brand-card-mark .brand-card-label {
+		border-bottom-color: rgba(240, 240, 248, 0.2);
+		color: var(--brand-mist);
+	}
+
+	.brand-mark-stage img {
+		width: min(13rem, 65%);
+		height: auto;
+		box-shadow: 0.75rem 0.75rem 0 -0.05rem var(--brand-teal);
+	}
+
+	.brand-size-strip {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 0.75rem;
+		border-top: 1px dashed rgba(240, 240, 248, 0.2);
+		padding-top: 1rem;
+	}
+
+	.brand-size-strip span {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 0.4rem;
+		opacity: 0.76;
+	}
+
+	.brand-size-strip small {
+		font-size: 0.55rem;
+	}
+
+	.brand-card-palette {
+		min-height: 19rem;
+	}
+
+	.brand-swatches {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		margin-top: 1.25rem;
+		border: 1px solid var(--brand-ink);
+	}
+
+	.brand-swatch {
+		display: flex;
+		min-height: 11rem;
+		flex-direction: column;
+		justify-content: space-between;
+		border-right: 1px solid var(--brand-ink);
+		padding: 1rem;
+		font-family: var(--font-display);
+		font-size: 0.625rem;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+	}
+
+	.brand-swatch:last-child {
+		border-right: 0;
+	}
+
+	.brand-swatch strong,
+	.brand-swatch small {
+		display: block;
+	}
+
+	.brand-swatch strong {
+		font-size: 0.7rem;
+		letter-spacing: 0.16em;
+	}
+
+	.brand-swatch small {
+		margin-top: 0.35rem;
+		opacity: 0.74;
+	}
+
+	.brand-swatch span {
+		font-family: var(--font-sans);
+		font-size: 0.8rem;
+		letter-spacing: -0.01em;
+		text-transform: none;
+	}
+
+	.brand-swatch-ink {
+		background: var(--brand-ink);
+		color: var(--brand-mist);
+	}
+	.brand-swatch-teal {
+		background: var(--brand-teal);
+		color: var(--brand-mist);
+	}
+	.brand-swatch-citrus {
+		background: var(--brand-citrus);
+		color: var(--brand-ink);
+	}
+	.brand-swatch-mist {
+		background: var(--brand-mist);
+		color: var(--brand-ink);
+	}
+
+	.brand-palette-rule {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+
+	.brand-palette-rule i {
+		display: flex;
+		flex: 1;
+		height: 0.45rem;
+		border: 1px solid var(--brand-ink);
+	}
+
+	.brand-palette-ink {
+		width: 60%;
+		background: var(--brand-ink);
+	}
+	.brand-palette-teal {
+		width: 25%;
+		background: var(--brand-teal);
+	}
+	.brand-palette-citrus {
+		width: 15%;
+		background: var(--brand-citrus);
+	}
+
+	.brand-card-type {
+		gap: 1rem;
+	}
+
+	.brand-type-block {
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+		border-bottom: 1px dashed rgba(40, 42, 62, 0.25);
+		padding-bottom: 1rem;
+	}
+
+	.brand-type-block:last-child {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.brand-type-block small {
+		opacity: 0.6;
+	}
+
+	.brand-type-display {
+		font-size: 2.6rem;
+		font-weight: 600;
+		letter-spacing: -0.06em;
+		line-height: 1;
+	}
+
+	.brand-type-mono {
+		font-family: var(--font-display);
+		font-size: 1.1rem;
+		font-weight: 500;
+		letter-spacing: 0;
+	}
+
+	.brand-type-block p {
+		margin: 0;
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+
+	.brand-app-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		margin-top: 1.25rem;
+	}
+
+	.brand-app {
+		display: flex;
+		min-height: 15rem;
+		flex-direction: column;
+		gap: 1rem;
+		border-right: 1px solid var(--brand-ink);
+		padding: 1.75rem;
+	}
+
+	.brand-app:last-child {
+		border-right: 0;
+	}
+
+	.brand-app-profile {
+		background: var(--brand-ink);
+		color: var(--brand-mist);
+	}
+
+	.brand-app-profile .brand-download {
+		color: var(--brand-mist);
+	}
+
+	.brand-profile-preview {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin: auto 0;
+	}
+
+	.brand-profile-preview img {
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: 50%;
+	}
+
+	.brand-profile-preview strong,
+	.brand-profile-preview span,
+	.brand-profile-preview p {
+		display: block;
+	}
+
+	.brand-profile-preview strong {
+		font-size: 1rem;
+	}
+
+	.brand-profile-preview span {
+		font-family: var(--font-display);
+		font-size: 0.65rem;
+		opacity: 0.55;
+	}
+
+	.brand-profile-preview p {
+		max-width: 15rem;
+		margin: 0.5rem 0 0;
+		font-size: 0.75rem;
+		line-height: 1.5;
+		opacity: 0.72;
+	}
+
+	.brand-app-stamp {
+		justify-content: space-between;
+		background: var(--brand-citrus);
+		color: var(--brand-ink);
+	}
+
+	.brand-stamp-word {
+		margin-top: auto;
+		font-size: clamp(3.5rem, 6vw, 5.5rem);
+		font-weight: 600;
+		letter-spacing: -0.08em;
+		line-height: 0.9;
+	}
+
+	.brand-stamp-word span {
+		color: var(--brand-teal);
+	}
+
+	.brand-stamp-meta {
+		display: flex;
+		justify-content: space-between;
+		font-family: var(--font-display);
+		font-size: 0.625rem;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+	}
+
+	.brand-app-terminal {
+		background: var(--brand-ink);
+		color: var(--brand-mist);
+	}
+
+	.brand-terminal {
+		margin: auto 0;
+		font-family: var(--font-display);
+		font-size: 0.7rem;
+		line-height: 1.9;
+	}
+
+	.brand-terminal b {
+		color: var(--brand-teal);
+	}
+
+	.brand-terminal-output b {
+		color: var(--brand-citrus);
+	}
+
+	.brand-cursor {
+		display: inline-block;
+		width: 0.45rem;
+		height: 0.8rem;
+		margin-left: 0.3rem;
+		background: var(--brand-citrus);
+		vertical-align: -0.1rem;
+		animation: brand-blink 1s steps(2) infinite;
+	}
+
+	@keyframes brand-blink {
+		50% {
+			opacity: 0;
+		}
+	}
+
+	.brand-page-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		border-top: 1px solid var(--brand-ink);
+		padding-block: 1.25rem 4rem;
+	}
+
+	.brand-page-footer strong {
+		font-family: var(--font-sans);
+		font-size: 0.9rem;
+		font-weight: 500;
+		letter-spacing: -0.02em;
+		text-transform: none;
+	}
+
+	.brand-page a:hover {
+		color: var(--brand-teal);
+	}
+
+	@media (max-width: 900px) {
+		.brand-intro,
+		.brand-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.brand-card-logo,
+		.brand-card-mark,
+		.brand-card-palette,
+		.brand-card-type,
+		.brand-card-apps {
+			grid-column: auto;
+		}
+
+		.brand-app-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.brand-app {
+			border-right: 0;
+			border-bottom: 1px solid var(--brand-ink);
+		}
+
+		.brand-app:last-child {
+			border-bottom: 0;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.brand-shell {
+			width: min(100% - 2rem, 80rem);
+		}
+
+		.brand-header,
+		.brand-page-footer {
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		.brand-meta-right {
+			text-align: left;
+		}
+
+		.brand-intro h1 {
+			font-size: clamp(3.5rem, 17vw, 5rem);
+		}
+
+		.brand-lead {
+			padding-left: 1rem;
+		}
+
+		.brand-card {
+			padding: 1.25rem;
+		}
+
+		.brand-swatches {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.brand-swatch-mobile-right {
+			border-right: 0;
+		}
+
+		.brand-swatch-mobile-bottom {
+			border-bottom: 1px solid var(--brand-ink);
+		}
+
+		.brand-palette-rule {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.brand-palette-rule i {
+			width: 100%;
+			flex: none;
+		}
+
+		.brand-profile-preview {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.brand-cursor {
+			animation: none;
+		}
+	}
+</style>

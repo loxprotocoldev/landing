@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <style>
+      .b {
+        fill: #e2eb98;
+      }
+
+      .c {
+        fill: #282a3e;
+      }
+    </style>
+  </defs>
+  <path class="c" d="M166,0v.03c-.68,0-1.36-.03-2.03-.03h2.03Z"/>
+  <g>
+    <rect class="b" width="240" height="240" rx="1.19" ry="1.19"/>
+    <rect class="b" y="21" width="240" height="199"/>
+    <g>
+      <polygon class="c" points="114.43 74.4 70.45 121.49 0 46.04 0 22 63.81 22 114.43 74.4"/>
+      <polygon class="c" points="114.1 172.24 69.51 220 0 220 0 200.24 70.12 125.14 114.1 172.24"/>
+      <polygon class="c" points="240 44.23 170.16 119.97 240 195.71 240 220 165.19 220 120.44 171.48 76.17 123.48 169.74 22 240 21.96 240 44.23"/>
+    </g>
+  </g>
+</svg>

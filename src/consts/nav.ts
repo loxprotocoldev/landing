@@ -5,7 +5,8 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: readonly NavItem[] = [
-	{ label: "Game assets", href: "#assets" },
-	{ label: "Purpose", href: "#purpose" },
+	{ label: "Game assets", href: "/#assets" },
+	{ label: "Purpose", href: "/#purpose" },
+	{ label: "Brand", href: "/brand" },
 	{ label: "Docs", href: "https://testnet.nftlox.com/docs/#/", external: true },
 ] as const
