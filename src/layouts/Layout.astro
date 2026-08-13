@@ -1,0 +1,139 @@
+---
+import "@fontsource-variable/space-grotesk"
+import "@fontsource-variable/jetbrains-mono"
+import "@/styles/global.css"
+import { SITE } from "@/consts/site"
+
+interface Props {
+	title?: string
+	description?: string
+	lang?: string
+	canonical?: string | false
+	robots?: string
+	ogImage?: string
+}
+
+const {
+	title = SITE.title,
+	description = SITE.description,
+	lang = SITE.lang,
+	canonical = SITE.url,
+	robots,
+	ogImage = SITE.ogImage,
+} = Astro.props
+
+const pageUrl = canonical || SITE.url
+const ogImageUrl = new URL(ogImage, SITE.url).toString()
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script is:inline>
+			document.documentElement.classList.add("js")
+		</script>
+		<title>{title}</title>
+
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<meta name="description" content={description} />
+		<meta name="author" content={SITE.author} />
+		<meta name="theme-color" content="#282a3e" />
+		{canonical && <link rel="canonical" href={canonical} />}
+		{robots && <meta name="robots" content={robots} />}
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={pageUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:locale" content={SITE.locale} />
+		<meta property="og:site_name" content="NFTLox" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
+		<meta name="twitter:image:alt" content={title} />
+	</head>
+	<body class="bg-grid">
+		<style is:global>
+			a:not(.button-control):hover,
+			button:not(.button-control):hover {
+				color: var(--color-citrus);
+			}
+			a:focus-visible,
+			button:focus-visible,
+			[role="button"]:focus-visible,
+			summary:focus-visible {
+				outline: 2px solid var(--color-citrus);
+				outline-offset: 3px;
+			}
+			button:disabled,
+			[aria-disabled="true"] {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+		</style>
+		<a
+			href="#main-content"
+			class="focus:bg-citrus focus:text-ink sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:outline-none"
+		>
+			Skip to content
+		</a>
+
+		<div class="corner-mark tl" aria-hidden="true"></div>
+		<div class="corner-mark tr" aria-hidden="true"></div>
+		<div class="corner-mark bl" aria-hidden="true"></div>
+		<div class="corner-mark br" aria-hidden="true"></div>
+
+		<svg class="grain-overlay" aria-hidden="true" focusable="false">
+			<filter id="grain-filter">
+				<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"
+				></feTurbulence>
+				<feColorMatrix type="saturate" values="0"></feColorMatrix>
+				<feComponentTransfer>
+					<feFuncA type="linear" slope="0" intercept="1"></feFuncA>
+				</feComponentTransfer>
+			</filter>
+			<rect width="100%" height="100%" filter="url(#grain-filter)"></rect>
+		</svg>
+
+		<main id="main-content">
+			<slot />
+		</main>
+
+		<script is:inline>
+			const revealTargets = document.querySelectorAll("[data-scroll-reveal]")
+
+			if (revealTargets.length > 0) {
+				if (!("IntersectionObserver" in window)) {
+					revealTargets.forEach((target) => target.setAttribute("data-revealed", "true"))
+				} else {
+					const revealObserver = new IntersectionObserver(
+						(entries, observer) => {
+							entries.forEach((entry) => {
+								if (!entry.isIntersecting) return
+
+								entry.target.setAttribute("data-revealed", "true")
+								observer.unobserve(entry.target)
+							})
+						},
+						{ rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+					)
+
+					revealTargets.forEach((target) => revealObserver.observe(target))
+				}
+			}
+		</script>
+	</body>
+</html>

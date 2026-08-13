@@ -1,0 +1,117 @@
+---
+const year = new Date().getFullYear()
+
+const protocolLinks = [
+	{ label: "Docs", href: "https://testnet.nftlox.com/docs/#/" },
+	{ label: "Playground", href: "https://testnet.nftlox.com/" },
+	{ label: "GitHub", href: "https://github.com/loxprotocoldev/nftlox" },
+]
+
+const communityLinks = [
+	{ label: "X / Twitter", href: "https://x.com/nftloxbuild" },
+	{ label: "Hive blog", href: "https://hive.blog/@nftlox" },
+]
+
+const legalLinks = [
+	{ label: "License (MIT)", href: "https://github.com/loxprotocoldev/nftlox/blob/master/LICENSE" },
+	{ label: "Privacy", href: "/privacy" },
+]
+---
+
+<footer class="container-hero border-mist-line mt-32 border-t py-12 pb-20 md:pb-16">
+	<div class="grid gap-10 md:grid-cols-12">
+		<div class="md:col-span-5">
+			<div class="flex items-center gap-2.5">
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 240 240"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
+				>
+					<rect width="240" height="240" rx="2" fill="#e2eb98"></rect>
+					<g fill="#282a3e">
+						<polygon points="114.43 74.4 70.45 121.49 0 46.04 0 22 63.81 22 114.43 74.4"></polygon>
+						<polygon points="114.1 172.24 69.51 220 0 220 0 200.24 70.12 125.14 114.1 172.24"
+						></polygon>
+						<polygon
+							points="240 44.23 170.16 119.97 240 195.71 240 220 165.19 220 120.44 171.48 76.17 123.48 169.74 22 240 21.96 240 44.23"
+						></polygon>
+					</g>
+				</svg>
+				<span class="type-label text-mist"> NFTLox </span>
+			</div>
+			<p class="type-body text-mist-dim mt-3 max-w-xs">
+				Functional asset infrastructure for games, communities, social platforms, AI applications,
+				and governance.
+			</p>
+		</div>
+
+		<div class="md:col-span-2">
+			<h3 class="type-label text-citrus">Protocol</h3>
+			<ul class="type-ui text-mist-dim mt-3 space-y-2">
+				{
+					protocolLinks.map((link) => (
+						<li>
+							<a
+								href={link.href}
+								class="motion-link hover:text-mist"
+								target={link.href.startsWith("http") ? "_blank" : undefined}
+								rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+							>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+
+		<div class="md:col-span-2">
+			<h3 class="type-label text-citrus">Community</h3>
+			<ul class="type-ui text-mist-dim mt-3 space-y-2">
+				{
+					communityLinks.map((link) => (
+						<li>
+							<a
+								href={link.href}
+								class="motion-link hover:text-mist"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+
+		<div class="md:col-span-3">
+			<h3 class="type-label text-citrus">Legal</h3>
+			<ul class="type-ui text-mist-dim mt-3 space-y-2">
+				{
+					legalLinks.map((link) => (
+						<li>
+							<a
+								href={link.href}
+								class="motion-link hover:text-mist"
+								target={link.href.startsWith("http") ? "_blank" : undefined}
+								rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+							>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+
+	<div
+		class="border-mist-line type-label text-mist-dim mt-12 flex flex-col items-start justify-between gap-3 border-t pt-6 sm:flex-row sm:items-center"
+	>
+		<span>NFTLox &middot; Public testnet</span>
+		<span>&copy; {year} NFTLox Protocol</span>
+	</div>
+</footer>

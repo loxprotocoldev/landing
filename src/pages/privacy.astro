@@ -1,0 +1,147 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Nav from "@/sections/Nav.astro"
+import Footer from "@/sections/Footer.astro"
+
+const lastUpdated = "August 12, 2026"
+---
+
+<Layout
+	title="Privacy & Asset Responsibility | NFTLox"
+	description="Privacy policy and responsibility rules for using NFTLox and publishing digital assets."
+	lang="en"
+	canonical="https://nftlox.com/privacy"
+>
+	<Nav />
+
+	<article class="container-narrow mx-auto px-6 pt-24 pb-8 sm:px-10 lg:pt-32">
+		<header class="max-w-3xl">
+			<p class="eyebrow">LEGAL / PRIVACY</p>
+			<h1 class="type-display text-mist mt-5">Privacy &amp; asset responsibility</h1>
+			<p class="type-body-lg text-mist-dim mt-7 max-w-2xl">
+				This page explains what it means to publish and use digital assets through NFTLox, as well
+				as the service's limitations and basic privacy rules.
+			</p>
+			<p class="type-label text-mist-dim mt-8">Last updated: {lastUpdated}</p>
+		</header>
+
+		<div
+			class="border-mist-line mt-20 grid gap-16 border-t pt-12 lg:grid-cols-[minmax(0,1fr)_15rem]"
+		>
+			<div class="space-y-14">
+				<section>
+					<p class="eyebrow">01 / Scope</p>
+					<h2 class="type-title text-mist mt-4">Infrastructure, not custody</h2>
+					<div class="type-body text-mist-dim mt-5 space-y-4">
+						<p>
+							NFTLox is a protocol and infrastructure for functional digital assets. We are not a
+							bank, exchange, or digital-asset custodian.
+						</p>
+						<p>
+							When using the protocol, each person is responsible for understanding the actions they
+							sign, the account they use, and the consequences of publishing or transferring an
+							asset.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<p class="eyebrow">02 / Publishing</p>
+					<h2 class="type-title text-mist mt-4">The publisher is responsible for the asset</h2>
+					<div class="type-body text-mist-dim mt-5 space-y-4">
+						<p>
+							The person or entity that uploads, creates, registers, or describes a digital asset is
+							responsible for that asset and all associated information.
+						</p>
+						<p>
+							This includes having the necessary rights and permissions, not infringing third-party
+							rights, not uploading illegal or misleading content, and complying with applicable
+							law. NFTLox does not verify or guarantee the ownership, authenticity, value, utility,
+							or legality of any published asset.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<p class="eyebrow">03 / Loss &amp; transactions</p>
+					<h2 class="type-title text-mist mt-4">Transactions may be irreversible</h2>
+					<div class="type-body text-mist-dim mt-5 space-y-4">
+						<p>
+							Transactions recorded on a blockchain network may be permanent and cannot always be
+							cancelled, reversed, or recovered.
+						</p>
+						<p>
+							Users assume the risk of losing access to their account or keys, sending an asset to
+							the wrong address, interacting with a third-party application, publishing data by
+							mistake, or experiencing a network interruption. NFTLox cannot recover keys, reverse
+							transactions, or guarantee the continuous availability of an external network or
+							service.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<p class="eyebrow">04 / Acceptable use</p>
+					<h2 class="type-title text-mist mt-4">Prohibited content and conduct</h2>
+					<div class="type-body text-mist-dim mt-5 space-y-4">
+						<p>
+							NFTLox may not be used for fraud, impersonation, money laundering, sanctions evasion,
+							malware, child exploitation, deliberate infringement of rights, or any illegal
+							activity.
+						</p>
+						<p>
+							We may limit, suspend, or remove an interface, account, or content when necessary to
+							protect the protocol, comply with the law, or respond to abuse. This does not mean we
+							can delete information already recorded on a blockchain.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<p class="eyebrow">05 / Privacy</p>
+					<h2 class="type-title text-mist mt-4">Information you share</h2>
+					<div class="type-body text-mist-dim mt-5 space-y-4">
+						<p>
+							You should avoid including unnecessary personal information in asset names,
+							descriptions, metadata, or public content. Information published on a blockchain may
+							be publicly visible and difficult to remove.
+						</p>
+						<p>
+							If a third-party application or service processes your data, that processing may be
+							subject to its own privacy policy. This page does not replace the policies of those
+							third parties.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<p class="eyebrow">06 / Changes &amp; contact</p>
+					<h2 class="type-title text-mist mt-4">A policy that may evolve</h2>
+					<div class="type-body text-mist-dim mt-5 space-y-4">
+						<p>
+							We may update this policy to reflect changes to the protocol, services, or law. The
+							updated date will appear at the beginning of this page.
+						</p>
+						<p>
+							For questions about this policy or to report abuse, contact the NFTLox team through
+							the official channels linked on the site.
+						</p>
+					</div>
+				</section>
+			</div>
+
+			<nav class="hidden lg:block" aria-label="On this page">
+				<p class="type-label text-citrus">On this page</p>
+				<ul class="type-ui text-mist-dim border-mist-line mt-4 space-y-3 border-l pl-4">
+					<li>Scope</li>
+					<li>Publishing</li>
+					<li>Loss</li>
+					<li>Acceptable use</li>
+					<li>Privacy</li>
+				</ul>
+			</nav>
+		</div>
+	</article>
+
+	<Footer />
+</Layout>

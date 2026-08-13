@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Nav from "@/sections/Nav.astro"
+import Footer from "@/sections/Footer.astro"
+import Button from "@/components/Button.astro"
+---
+
+<Layout
+	title="Page not found | NFTLox"
+	description="The requested NFTLox page could not be found."
+	robots="noindex, follow"
+	canonical={false}
+>
+	<Nav />
+
+	<section
+		class="container-narrow mx-auto flex min-h-[60vh] flex-col justify-center px-6 py-24 sm:px-10"
+	>
+		<p class="eyebrow">ERROR / 404</p>
+		<h1 class="type-display text-mist mt-5 max-w-3xl text-balance">
+			This asset is <span class="text-citrus">not here.</span>
+		</h1>
+		<p class="type-body-lg text-mist-dim mt-7 max-w-xl">
+			The page you are looking for may have moved, expired, or never been published.
+		</p>
+		<div class="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+			<Button href="/" variant="primary" size="lg">Back to home</Button>
+			<Button href="https://testnet.nftlox.com/docs/#/" variant="secondary" size="lg">
+				Read the docs
+			</Button>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>

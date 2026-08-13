@@ -1,0 +1,33 @@
+---
+import Button from "@/components/Button.astro"
+---
+
+<section
+	class="border-mist-line relative border-t py-20 md:py-28"
+	aria-labelledby="prelaunch-heading"
+>
+	<div class="container-content">
+		<div class="mx-auto max-w-4xl text-center">
+			<span class="eyebrow">Pre-launch</span>
+			<h2 id="prelaunch-heading" class="type-display text-mist mt-5 text-balance">
+				Explore what digital<br />
+				<span class="text-citrus">utility can become.</span>
+			</h2>
+			<p class="type-body-lg text-mist-dim mx-auto mt-6 max-w-2xl text-balance">
+				NFTLox is currently in pre-launch. The public testnet is available for early builders
+				exploring games, communities, social experiences, AI applications, and governance.
+			</p>
+			<div
+				class="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center"
+			>
+				<Button href="https://testnet.nftlox.com/" variant="primary" size="lg">
+					Explore testnet
+				</Button>
+				<Button href="https://testnet.nftlox.com/docs/#/" variant="secondary" size="lg">
+					Read the docs
+				</Button>
+			</div>
+			<p class="type-label text-mist-dim mt-8">Experimental software · Not production ready</p>
+		</div>
+	</div>
+</section>

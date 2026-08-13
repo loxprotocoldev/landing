@@ -1,0 +1,54 @@
+---
+import { NAV_ITEMS } from "@/consts/nav"
+import { SITE } from "@/consts/site"
+import Button from "@/components/Button.astro"
+---
+
+<nav
+	class="nav-surface container-hero sticky top-0 z-40 flex h-20 w-full items-center justify-between gap-6"
+	aria-label="Primary"
+>
+	<a href="/" class="flex items-center gap-3" aria-label={SITE.title}>
+		<svg
+			width="32"
+			height="32"
+			viewBox="0 0 240 240"
+			xmlns="http://www.w3.org/2000/svg"
+			aria-hidden="true"
+		>
+			<rect width="240" height="240" rx="2" fill="#e2eb98"></rect>
+			<g fill="#282a3e">
+				<polygon points="114.43 74.4 70.45 121.49 0 46.04 0 22 63.81 22 114.43 74.4"></polygon>
+				<polygon points="114.1 172.24 69.51 220 0 220 0 200.24 70.12 125.14 114.1 172.24"></polygon>
+				<polygon
+					points="240 44.23 170.16 119.97 240 195.71 240 220 165.19 220 120.44 171.48 76.17 123.48 169.74 22 240 21.96 240 44.23"
+				></polygon>
+			</g>
+		</svg>
+		<span class="type-label text-mist hidden sm:inline"> NFTLox </span>
+	</a>
+
+	<ul class="type-ui text-mist-dim hidden items-center gap-8 md:flex">
+		{
+			NAV_ITEMS.map((item) => (
+				<li>
+					<a
+						href={item.href}
+						class="motion-link hover:text-mist"
+						target={item.external ? "_blank" : undefined}
+						rel={item.external ? "noopener noreferrer" : undefined}
+					>
+						{item.label}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+
+	<div class="flex items-center gap-3">
+		<span class="type-label text-mist-dim hidden lg:inline-flex" aria-label="Status">
+			<span class="pulse-dot"></span>Pre-launch
+		</span>
+		<Button href="https://testnet.nftlox.com/" variant="mono" size="md"> Explore testnet </Button>
+	</div>
+</nav>

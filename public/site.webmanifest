@@ -1,0 +1,15 @@
+{
+	"name": "NFTLox",
+	"short_name": "NFTLox",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#282a3e",
+	"theme_color": "#282a3e",
+	"icons": [
+		{
+			"src": "/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
