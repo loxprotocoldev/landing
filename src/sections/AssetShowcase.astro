@@ -1,25 +1,18 @@
 ---
-const assets = [
+import Button from "@/components/Button.astro"
+
+const roadmap = [
 	{
 		index: "01",
-		category: "Game asset",
-		title: "Progress that belongs to the player.",
-		description:
-			"Characters, items, abilities, and achievements can evolve with the experience while remaining owned by the player.",
-		image: "/nft/game-asset.webp",
-		alt: "Illustrated fantasy warrior shown as an example of a functional game asset",
-	},
-	{
-		index: "02",
 		category: "Fan & community",
 		title: "Belonging made useful.",
 		description:
-			"An asset can represent membership, exclusive access, community rewards, and shared experiences.",
+			"Membership, exclusive access, community rewards, and shared experiences can live in an owned asset.",
 		image: "/nft/community-access.webp",
 		alt: "Purple VIP access pass shown as an example of a fan and community asset",
 	},
 	{
-		index: "03",
+		index: "02",
 		category: "AI applications",
 		title: "Benefits that respond to participation.",
 		description:
@@ -28,11 +21,11 @@ const assets = [
 		alt: "App discount coupon shown as an example of an asset issued by an AI-powered application",
 	},
 	{
-		index: "04",
-		category: "Community-defined value",
+		index: "03",
+		category: "Community value",
 		title: "Meaning shaped by the community.",
 		description:
-			"Collections can represent symbols, ideas, or digital goods. Their value can emerge from utility, provenance, scarcity, and shared recognition—not from a promise of financial backing.",
+			"Collections can represent digital goods whose utility, provenance, scarcity, and recognition create shared meaning.",
 		image: "/nft/community-value.webp",
 		alt: "Gold bar with a Bitcoin symbol used as an illustration of community-defined digital value",
 	},
@@ -43,68 +36,120 @@ const assets = [
 	<div class="container-content">
 		<header class="mb-12 grid gap-6 md:grid-cols-12 md:items-end" data-scroll-reveal>
 			<div class="md:col-span-7">
-				<span class="eyebrow">Assets in practice</span>
+				<span class="eyebrow">Game assets · Primary use case</span>
 				<h2 id="assets-heading" class="type-title text-mist mt-4 text-balance">
-					An asset is defined by<br />
-					<span class="text-citrus">what it enables.</span>
+					Progress that belongs<br />
+					<span class="text-citrus">to the player.</span>
 				</h2>
 			</div>
 			<p class="type-body text-mist-dim max-w-xl text-balance md:col-span-5 md:justify-self-end">
-				NFTLox gives applications a shared asset model. The experience defines the purpose; the
-				infrastructure preserves ownership, state, and provenance.
+				Characters, items, abilities, and achievements can evolve with the game while NFTLox
+				preserves ownership, live state, and provenance underneath.
 			</p>
 		</header>
 
-		<div
-			class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-2 md:overflow-visible md:pb-0 lg:grid-cols-4"
-			aria-label="Functional asset examples"
-		>
-			{
-				assets.map((asset) => (
-					<article
-						class="asset-card border-mist-line bg-ink-deep flex w-4/5 max-w-sm flex-none snap-start flex-col overflow-hidden border md:w-auto md:max-w-none"
-						data-scroll-reveal
-					>
-						<div class="bg-ink relative aspect-2/3 overflow-hidden">
-							<img
-								src={asset.image}
-								alt={asset.alt}
-								width="768"
-								height="1152"
-								loading="eager"
-								decoding="async"
-								class="asset-card-image h-full w-full object-cover"
-							/>
-						</div>
-						<div class="border-mist-line flex flex-1 flex-col border-t p-5">
-							<span class="data-tag text-citrus">
-								{asset.index} · {asset.category}
-							</span>
-							<h3 class="type-heading text-mist mt-4 text-balance">{asset.title}</h3>
-							<p class="type-body text-mist-dim mt-3">{asset.description}</p>
-						</div>
-					</article>
-				))
-			}
+		<div class="grid gap-4 lg:grid-cols-12" data-scroll-reveal>
+			<figure class="asset-card border-mist-line bg-ink-deep overflow-hidden border lg:col-span-5">
+				<div class="bg-ink relative aspect-2/3 overflow-hidden">
+					<img
+						src="/nft/game-asset.webp"
+						alt="Illustrated fantasy warrior shown as an example of a functional game asset"
+						width="768"
+						height="1152"
+						loading="eager"
+						decoding="async"
+						class="asset-card-image h-full w-full object-cover"
+					/>
+				</div>
+				<figcaption class="border-mist-line type-body text-mist-dim border-t p-5">
+					One asset can carry player ownership, mutable progression, and a scoped use state without
+					turning the game into a marketplace.
+				</figcaption>
+			</figure>
+
+			<article
+				class="border-mist-line bg-ink-deep flex flex-col justify-center border p-6 md:p-10 lg:col-span-7"
+			>
+				<div class="max-w-xl">
+					<span class="data-tag text-citrus">Early use case · Pre-launch</span>
+					<h3 class="type-heading text-mist mt-5 text-balance">Ragnarok NFT Game</h3>
+					<p class="type-body text-mist-dim mt-4">
+						Ragnarok is one of the first game use cases being explored for NFTLox: an open-source
+						deck-building strategy game on Hive, where gods and titans fight in strategic 1v1 duels.
+					</p>
+					<div class="mt-8">
+						<Button
+							href="https://ragnaroknft.quest/"
+							variant="secondary"
+							size="lg"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Visit Ragnarok
+						</Button>
+					</div>
+				</div>
+			</article>
 		</div>
 
-		<div class="border-mist-line mt-12 grid gap-8 border-t pt-8 md:grid-cols-2 md:gap-12">
-			<article>
-				<span class="data-tag text-teal">Social platforms</span>
-				<h3 class="type-heading text-mist mt-3">Identity that can be recognized.</h3>
-				<p class="type-body text-mist-dim mt-2 max-w-lg">
-					Assets can express reputation, achievements, creator rewards, and community roles inside
-					social experiences.
+		<div class="border-mist-line mt-16 border-t pt-8" data-scroll-reveal>
+			<div class="grid gap-4 md:grid-cols-12 md:items-end">
+				<div class="md:col-span-5">
+					<span class="eyebrow">Roadmap · Beyond games</span>
+					<h3 class="type-heading text-mist mt-4 text-balance">
+						Games first. More verticals later.
+					</h3>
+				</div>
+				<p class="type-body text-mist-dim max-w-xl md:col-span-7 md:justify-self-end">
+					NFTLox starts with game assets. Future protocol applications may extend the same
+					functional asset model into:
 				</p>
-			</article>
-			<article>
-				<span class="data-tag text-teal">Participation & governance</span>
-				<h3 class="type-heading text-mist mt-3">A verifiable right to participate.</h3>
-				<p class="type-body text-mist-dim mt-2 max-w-lg">
-					Applications can use asset ownership or state to define eligibility for proposals, voting,
-					and community responsibilities.
+			</div>
+
+			<ol
+				class="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0"
+				aria-label="Future functional asset applications"
+			>
+				{
+					roadmap.map((item) => (
+						<li class="asset-card border-mist-line bg-ink-deep flex w-4/5 max-w-sm flex-none snap-start flex-col overflow-hidden border md:w-auto md:max-w-none">
+							<div class="bg-ink relative aspect-2/3 overflow-hidden">
+								<img
+									src={item.image}
+									alt={item.alt}
+									width="768"
+									height="1152"
+									loading="lazy"
+									decoding="async"
+									class="asset-card-image h-full w-full object-cover"
+								/>
+							</div>
+							<div class="border-mist-line flex flex-1 flex-col border-t p-5">
+								<span class="data-tag text-teal">
+									Roadmap {item.index} · {item.category}
+								</span>
+								<h3 class="type-heading text-mist mt-4 text-balance">{item.title}</h3>
+								<p class="type-body text-mist-dim mt-3">{item.description}</p>
+							</div>
+						</li>
+					))
+				}
+			</ol>
+
+			<div class="border-mist-line mt-8 grid gap-6 border-t pt-6 sm:grid-cols-2">
+				<p class="type-body text-mist-dim">
+					<span class="data-tag text-teal block">Social platforms</span>
+					<span class="mt-2 block"
+						>Portable achievements, creator rewards, reputation, and roles.</span
+					>
 				</p>
-			</article>
+				<p class="type-body text-mist-dim">
+					<span class="data-tag text-teal block">Participation & governance</span>
+					<span class="mt-2 block"
+						>Verifiable eligibility for proposals and community decisions.</span
+					>
+				</p>
+			</div>
 		</div>
 	</div>
 </section>

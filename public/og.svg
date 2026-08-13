@@ -14,7 +14,7 @@
 
 	<g font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3" fill="#f0f0f8" opacity="0.45">
 		<text x="80" y="60">NFTLOX · PRE-LAUNCH · PUBLIC TESTNET</text>
-		<text x="1120" y="60" text-anchor="end">FUNCTIONAL ASSET INFRASTRUCTURE</text>
+		<text x="1120" y="60" text-anchor="end">GAME ASSET INFRASTRUCTURE</text>
 	</g>
 
 	<g transform="translate(80, 220)">
@@ -31,10 +31,10 @@
 			NFTLox
 		</text>
 		<text y="80" font-family="JetBrains Mono, monospace" font-size="22" fill="#e2eb98">
-				Assets built to mean something.
+				Game assets built to mean something.
 		</text>
 		<text y="130" font-family="JetBrains Mono, monospace" font-size="16" letter-spacing="2" fill="#f0f0f8" opacity="0.55">
-			ACCESS · PROGRESS · REWARDS · PARTICIPATION
+			OWNERSHIP · PROGRESSION · LENDING · MARKETPLACE
 		</text>
 	</g>
 

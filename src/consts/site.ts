@@ -1,7 +1,7 @@
 export const SITE = {
-	title: "NFTLox — Functional asset infrastructure",
+	title: "NFTLox — Game asset infrastructure on Hive",
 	description:
-		"Infrastructure for functional digital assets that represent access, progress, rewards, membership, discounts, and participation across games and applications.",
+		"Open infrastructure for player-owned game assets with mutable state, non-custodial lending, and atomic marketplace settlement on Hive.",
 	url: "https://nftlox.com",
 	author: "NFTLox Protocol",
 	lang: "en",
